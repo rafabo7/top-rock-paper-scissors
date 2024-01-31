@@ -18,6 +18,10 @@ function getComputerChoice () {
                 }
 }
 
+let score = {
+    'computer' : 0,
+    'human' : 0
+}
 
 function playRound (playerSelection, computerSelection){
     let result;
@@ -28,16 +32,23 @@ function playRound (playerSelection, computerSelection){
         result = "You won!"
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
         result = "You won!"
+        score['human'] += 1
     } else if (playerSelection == computerSelection){
         result = "That's a tie!"
     }
     else {
         result = "You lose!"
+        score['computer'] += 1
     }
     return result
 }
 
-// for (let i = 0; i < 5; i++){
-//     let playerSelection = prompt("Welcome to the game. What is your choice?")
-//     console.log(playRound(playerSelection, getComputerChoice()))
-// }
+const rockBtn = document.querySelector('#rock')
+const paperBtn = document.querySelector('#paper')
+const scissorBtn = document.querySelector('#scissors')
+const scoreBoard = document.querySelector('#scoreboard')
+
+rockBtn.addEventListener('click', playRound('rock', getComputerChoice()))
+paperBtn.addEventListener('click', playRound('paper', getComputerChoice()))
+scissorBtn.addEventListener('click', playRound('scissors', getComputerChoice()))
+
