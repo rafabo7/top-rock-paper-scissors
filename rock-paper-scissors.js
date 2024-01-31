@@ -37,7 +37,7 @@ function playRound (playerSelection, computerSelection){
     return result
 }
 
-for (let i = 0; i < 5; i++){
-    let playerSelection = prompt("Welcome to the game. What is your choice?")
-    console.log(playRound(playerSelection, getComputerChoice()))
-}
+// for (let i = 0; i < 5; i++){
+//     let playerSelection = prompt("Welcome to the game. What is your choice?")
+//     console.log(playRound(playerSelection, getComputerChoice()))
+// }
