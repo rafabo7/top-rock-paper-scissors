@@ -1,5 +1,3 @@
-let greeting = "Hello"
-
 // Rock: 1
 // Paper: 2
 // Scissors: 3
@@ -23,32 +21,47 @@ let score = {
     'human' : 0
 }
 
-function playRound (playerSelection, computerSelection){
+function playRound (playerSelection){
     let result;
-    playerSelection.toLowerCase
-    if (playerSelection == "rock" && computerSelection == "scissors"){
+    let computer = getComputerChoice()
+    if (playerSelection == "rock" && computer == "scissors"){
         result = "You won!"
-    } else if(playerSelection == "paper" && computerSelection == "rock") {
-        result = "You won!"
-    } else if (playerSelection == "scissors" && computerSelection == "paper"){
-        result = "You won!"
+        para.append(result)
+        scoreBoard.appendChild(para)
         score['human'] += 1
-    } else if (playerSelection == computerSelection){
+    } else if(playerSelection == "paper" && computer == "rock") {
+        result = "You won!"
+        para.append(result)
+        scoreBoard.appendChild(para)
+        score['human'] += 1
+    } else if (playerSelection == "scissors" && computer == "paper"){
+        result = "You won!"
+        para.append(result)
+        scoreBoard.appendChild(para)
+        score['human'] += 1
+
+    } else if (playerSelection == computer){
         result = "That's a tie!"
+        para.append(result)
+        scoreBoard.appendChild(para)
     }
     else {
         result = "You lose!"
+        para.append(result)
+        scoreBoard.appendChild(para)
         score['computer'] += 1
     }
-    return result
+    
 }
 
 const rockBtn = document.querySelector('#rock')
 const paperBtn = document.querySelector('#paper')
 const scissorBtn = document.querySelector('#scissors')
 const scoreBoard = document.querySelector('#scoreboard')
+const para = document.createElement('p')
 
-rockBtn.addEventListener('click', playRound('rock', getComputerChoice()))
-paperBtn.addEventListener('click', playRound('paper', getComputerChoice()))
-scissorBtn.addEventListener('click', playRound('scissors', getComputerChoice()))
+
+rockBtn.addEventListener('click', playRound('rock'))
+paperBtn.addEventListener('click', playRound('paper'))
+scissorBtn.addEventListener('click', playRound('scissors'))
 
