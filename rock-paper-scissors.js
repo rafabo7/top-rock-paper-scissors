@@ -20,7 +20,7 @@ let score = {
     'computer' : 0,
     'human' : 0
 }
-
+let playerChoice = ""
 function playRound (playerSelection){
     let result;
     let computer = getComputerChoice()
@@ -61,7 +61,16 @@ const scoreBoard = document.querySelector('#scoreboard')
 const para = document.createElement('p')
 
 
-rockBtn.addEventListener('click', playRound('rock'))
-paperBtn.addEventListener('click', playRound('paper'))
-scissorBtn.addEventListener('click', playRound('scissors'))
+rockBtn.addEventListener('click', () => {
+    playerChoice = "rock"
+    playRound(playerChoice)
+})
+paperBtn.addEventListener('click', () => {
+    playerChoice = "rock"
+    playRound(playerChoice)
+})
+scissorBtn.addEventListener('click', () => {
+    playerChoice = "rock"
+    playRound(playerChoice)
+})
 
