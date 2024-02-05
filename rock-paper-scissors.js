@@ -23,24 +23,30 @@ let score = {
 let playerChoice = ""
 function playRound (playerSelection){
     let result;
+    let para = document.createElement('p')
     let computer = getComputerChoice()
     if (playerSelection == computer){
-        result = "That's a tie!\n"
-        para.append(result)
+        result = "That's a tie!"
+        para.textContent = result
         scoreBoard.appendChild(para)
+        
     } else if (
         (playerSelection == "rock" && computer == "scissors")||
         (playerSelection == "paper" && computer == "rock")||
         (playerSelection == "scissors" && computer == "paper")){
-        result = "You won!\n"
-        para.append(result)
+        result = "You won!"
+        para.textContent = result
+        para.classList.toggle('win')
         scoreBoard.appendChild(para)
         score['human'] += 1
+        showScore.innerText = `Human : ${score['human']} -- Computer : ${score['computer']}`
     }  else {
-        result = "You lose!\n"
-        para.append(result)
+        result = "You lose!"
+        para.textContent = result
+        para.classList.toggle('loss')
         scoreBoard.appendChild(para)
         score['computer'] += 1
+        showScore.innerText = `Human : ${score['human']} -- Computer : ${score['computer']}`
     }
     
 }
@@ -49,7 +55,7 @@ const rockBtn = document.querySelector('#rock')
 const paperBtn = document.querySelector('#paper')
 const scissorBtn = document.querySelector('#scissors')
 const scoreBoard = document.querySelector('#scoreboard')
-const para = document.createElement('p')
+const showScore = document.querySelector('#score')
 
 
 rockBtn.addEventListener('click', () => {

@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    border: 1px grey solid;
+    border-radius: 16px;
+    padding: 12px 0 12px 0;
+
+}
+
+#scoreboard > p {
+    display: block;
+}
+
+#scoreboard > .loss {
+    color: red;
+}
+
+#scoreboard > .win {
+    color: green;
+}
