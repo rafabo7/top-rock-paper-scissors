@@ -24,29 +24,20 @@ let playerChoice = ""
 function playRound (playerSelection){
     let result;
     let computer = getComputerChoice()
-    if (playerSelection == "rock" && computer == "scissors"){
-        result = "You won!"
+    if (playerSelection == computer){
+        result = "That's a tie!\n"
+        para.append(result)
+        scoreBoard.appendChild(para)
+    } else if (
+        (playerSelection == "rock" && computer == "scissors")||
+        (playerSelection == "paper" && computer == "rock")||
+        (playerSelection == "scissors" && computer == "paper")){
+        result = "You won!\n"
         para.append(result)
         scoreBoard.appendChild(para)
         score['human'] += 1
-    } else if(playerSelection == "paper" && computer == "rock") {
-        result = "You won!"
-        para.append(result)
-        scoreBoard.appendChild(para)
-        score['human'] += 1
-    } else if (playerSelection == "scissors" && computer == "paper"){
-        result = "You won!"
-        para.append(result)
-        scoreBoard.appendChild(para)
-        score['human'] += 1
-
-    } else if (playerSelection == computer){
-        result = "That's a tie!"
-        para.append(result)
-        scoreBoard.appendChild(para)
-    }
-    else {
-        result = "You lose!"
+    }  else {
+        result = "You lose!\n"
         para.append(result)
         scoreBoard.appendChild(para)
         score['computer'] += 1
