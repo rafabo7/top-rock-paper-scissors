@@ -31,3 +31,12 @@ h1 {
     font-size: large;
     color: green;
 }
+
+button {
+    width: 90px;
+    height: 56px;
+    padding: 8px;
+    border-radius: 16px;
+    border: 2px solid grey;
+    font-size: 16px;
+}
