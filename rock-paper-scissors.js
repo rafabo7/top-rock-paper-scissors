@@ -66,9 +66,11 @@ function endGame() {
         scoreBoard.removeChild(scoreBoard.firstChild)
     }
     if (score['human'] == 5){
+        showResult.setAttribute('id', 'final-win')
         showResult.textContent = "You won the game!"
 
     } else {
+        showResult.setAttribute('id', 'final-lose')
         showResult.textContent = "You lose the game!"
     }
 

@@ -21,3 +21,13 @@ h1 {
 #scoreboard > .win {
     color: green;
 }
+
+#final-lose {
+    font-size: large;
+    color: red;
+}
+
+#final-win {
+    font-size: large;
+    color: green;
+}
