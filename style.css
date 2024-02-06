@@ -9,9 +9,14 @@ h1 {
     padding: 12px 0 12px 0;
 
 }
+#scoreboard {
+    margin-bottom: 24px;
+
+}
 
 #scoreboard > p {
     display: block;
+    margin-bottom: 8px;
 }
 
 #scoreboard > .loss {
@@ -39,4 +44,13 @@ button {
     border-radius: 16px;
     border: 2px solid grey;
     font-size: 16px;
+}
+
+footer {
+    width: 100%;
+    margin-top: 12px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    background-color: darkgray;
 }
